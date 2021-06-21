@@ -138,6 +138,8 @@ function Main(props) {
     console.log(useRouteMatch());
     console.log(useParams());
     console.log(idP);
+    console.log(process.env.PORT);
+    console.log(process.env.JWT_KEY);
     return (
         <div>
             <div className={"block_card"}>
