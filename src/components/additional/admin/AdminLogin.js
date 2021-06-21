@@ -8,7 +8,7 @@ function AdminLogin(props) {
     const dispatch=useDispatch();
     return (
         <div>
-            <h1>Admin Lo gin</h1>
+            <h1>Admin Log in</h1>
             <div className='admin-login'>
             <h3>password 'admin'</h3>
                 <span>{(input&&input !==password)?'Invalid Password':''}</span>
