@@ -1,0 +1,9 @@
+h1{
+  color: #C21F39;
+  text-align: center;
+  &:hover{
+    color: #8fd19e;
+    transition: color 0.5s;
+    cursor: pointer;
+  }
+}

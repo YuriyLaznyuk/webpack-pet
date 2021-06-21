@@ -1,0 +1,40 @@
+.registration {
+  width: 50%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px solid;
+  background-color: #a3acb6;
+  box-sizing: border-box;
+}
+
+.registration label,
+.registration input,
+{
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.registration label {
+  margin: 4px 0;
+}
+
+.registration button {
+  margin: 10px 0;
+  width: 150px;
+  cursor: pointer;
+  font-size: 22px;
+
+  &:hover {
+    border-radius: 20px;
+    transition: 0.5s;
+  }
+}
+
+.registration span {
+  color: red;
+}

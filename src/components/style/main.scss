@@ -1,0 +1,48 @@
+.block_card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px auto;
+}
+.card_product{
+  width: 200px;
+  margin: 2px;
+  padding: 5px;
+  border: 2px solid;
+  background-color: rgba(159, 205, 255, 0.24);
+  text-align: center;
+  cursor: pointer;
+  &:hover{
+    background-color: rgba(159, 205, 255, 0.12);
+    transition: background-color 0.5s;
+  }
+}
+
+.card_product a{
+text-decoration: none;
+  color: black;
+  font-weight: 600;
+  &:hover{
+    color: #005cbf;
+    transition: color 0.3s;
+  }
+}
+
+.navPage{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 10%;
+  bottom: 70px;
+}
+.navPage-li{
+  list-style: none;
+  padding: 5px;
+  border: 1px solid;
+  margin: 2px;
+  cursor: pointer;
+  &:hover{
+    background-color: #7abaff;
+    transition: background-color 0.5s;
+  }
+}

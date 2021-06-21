@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.main-menu{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  background-color: #a3acb6;
+}
+.main-menu li{
+  list-style: none;
+  padding: 10px;
+
+}
+.first{
+  margin-left: 40px;
+}
+.main-menu a{
+  text-decoration: none;
+}
+.footer{
+  height: 50px;
+  justify-content: center;
+  background-color: #8fd19e;
+}
+
+.content{
+  min-height: calc(100vh - 50px);
+}
+.active{
+  border-bottom: 3px solid #ba8b00;
+}
+
+.logout,.auth{
+  color: white;
+  position: relative;
+  left: 40%;
+  cursor: pointer;
+}
+

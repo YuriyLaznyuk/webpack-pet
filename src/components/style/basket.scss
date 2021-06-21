@@ -1,0 +1,41 @@
+.basket-table{
+  width: 70%;
+  margin: 20px auto;
+  text-align: center;
+  table-layout: fixed;
+  border: 1px solid;
+}
+tr,th,td{
+  border: 1px solid;
+}
+.th-span{
+  margin: 0 8px;
+  background-color: aqua;
+  padding: 0 4px;
+}
+td input{
+  margin: 3px;
+  cursor: pointer;
+}
+.basket-confirm{
+  margin: 2px 15px;
+  padding: 1px;
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.42);
+  &:hover{
+    background-color: #9fcdff;
+    transition: background-color 0.5s;
+  }
+}
+.get-orders{
+  display: inherit;
+  margin: 10px auto;
+  cursor: pointer;
+  padding: 3px;
+  background-color: blue;
+  &:hover{
+    background-color: red;
+    transition: background-color 0.5s;
+
+  }
+}
