@@ -106,7 +106,7 @@ function Main(props) {
                             {item.productCategory}
                         </div>
                         <div className='srcImg'>
-                            <img width={125} height={94} src={`http://localhost:7070/uploads/${item.srcImg}`}
+                            <img width={125} height={94} src={host+`/uploads/${item.srcImg}`}
                                  alt={`${item.productName}`}/>
                         </div>
                         {isAuth && <div className='addBasket'>
