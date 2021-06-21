@@ -9,6 +9,8 @@ function Authorization(props) {
     const [ redirect, setRedirect ] = useState();
     const [validEmail, setValidEmail] = useState({email: '', valid: false});
     const [validPassword, setValidPassword] = useState({password: '', valid: false});
+    const host=window.location.origin;
+
 
     function onInput(e) {
 
@@ -26,7 +28,7 @@ function Authorization(props) {
     }
     
     function authorizationUser() {
-        fetch('http://localhost:7070/api/users/login',{
+        fetch(host+'/api/users/login',{
             method:"POST",
             headers:{
                 "Content-Type": "application/json; charset=utf-8"

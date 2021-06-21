@@ -7,6 +7,8 @@ function Basket(props) {
     const { currentUser } = useSelector(state => state.user);
     const { orders } = useSelector(state => state.orders);
     const dispatch = useDispatch();
+    const host=window.location.origin;
+
 
     function currentOrder() {
         return (
@@ -43,7 +45,7 @@ function Basket(props) {
     }
 
     function confirmOrder() {
-        fetch('http://localhost:7070/api/basket', {
+        fetch(host+'/api/basket', {
             method: 'POST',
             headers: {"Content-Type": "application/json; charset=utf-8"},
             body: JSON.stringify({
@@ -62,7 +64,7 @@ function Basket(props) {
     }
 
     function getConfirmedOrders() {
-        fetch('http://localhost:7070/api/basket')
+        fetch(host+'/api/basket')
             .then(res => res.json())
             .then(json => {
                 (json.message)

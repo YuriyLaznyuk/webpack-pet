@@ -10,6 +10,8 @@ function ModalDashboard(props) {
         editProduct, editIndex
     } = useSelector(state => state.dashboard);
     const {products} = useSelector(state => state.shop);
+    const host=window.location.origin;
+
 
     let _editProduct = [];
     if (editIndex) {
@@ -36,7 +38,7 @@ function ModalDashboard(props) {
     }
 
     function fetchServer() {
-        fetch('http://localhost:7070/api/products')
+        fetch(host+'/api/products')
             .then(res => res.json())
             .then(json => dispatch({type: "json products", payload: json}))
             .catch(err => console.log(err));
@@ -53,7 +55,7 @@ function ModalDashboard(props) {
             formData.append("productCategory", productCategory ? productCategory : _editProduct[0].productCategory);
             formData.append("productImg", productImg);
 
-            fetch('http://localhost:7070/api/products', {
+            fetch(host+'/api/products', {
                 method: "PUT",
                 headers: {
                     // "Content-Type": "application/json; charset=utf-8"
@@ -79,7 +81,7 @@ function ModalDashboard(props) {
             formData.append("productPrice", productPrice);
             formData.append("productCategory", productCategory);
             formData.append("productImg", productImg);
-            fetch('http://localhost:7070/api/products', {
+            fetch(host+'/api/products', {
                 method: "POST",
                 headers: {
                     // "Content-Type": "application/json; charset=utf-8"

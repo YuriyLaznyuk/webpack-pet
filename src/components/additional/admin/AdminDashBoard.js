@@ -7,9 +7,11 @@ function AdminDashBoard(props) {
     const dispatch = useDispatch();
     const {products} = useSelector(state => state.shop);
     const {addProduct,addFlag,editFlag} = useSelector(state => state.dashboard);
+    const host=window.location.origin;
+
 
     function reqServer() {
-        fetch('http://localhost:7070/api/products')
+        fetch(host+'/api/products')
             .then(res => res.json())
             .then(json => {
                 dispatch({type: "json products", payload: json});
@@ -29,7 +31,7 @@ function AdminDashBoard(props) {
 
     function deleteProduct(id) {
 
-        fetch('http://localhost:7070/api/products/' + id, {
+        fetch(host+'/api/products/' + id, {
             method: "DELETE",
             headers: {"Content-Type": "application/json; charset=utf-8"}
         }).then(res => {

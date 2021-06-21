@@ -10,6 +10,9 @@ function Registration(props) {
     const [validEmail, setValidEmail] = useState({email: '', valid: false});
     const [validName, setValidName] = useState({name: '', valid: false});
     const [validPassword, setValidPassword] = useState({password: '', valid: false});
+    const host=window.location.origin;
+
+
 
     function onInput(e) {
         const name = e.target.name;
@@ -28,7 +31,7 @@ function Registration(props) {
     }
 
     function registrationUser() {
-        fetch('http://localhost:7070/api/users', {
+        fetch(host+'/api/users', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"

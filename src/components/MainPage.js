@@ -23,9 +23,11 @@ function MainPage(props) {
     const { isAuth, currentUser } = useSelector(state => state.user);
     const dispatch = useDispatch();
     console.log(useRouteMatch());
+    const host=window.location.origin;
+
 
     function authToken() {
-        fetch('http://localhost:7070/api/users/auth', {
+        fetch(host+'/api/users/auth', {
             headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
         })
         .then(res => res.json())

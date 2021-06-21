@@ -18,9 +18,10 @@ function Main(props) {
     const basket = useSelector(state => state.basket);
     const { url, path } = useRouteMatch();
     const { idP } = useParams();
+    const host=window.location.origin;
 
     useEffect(() => {
-        fetch('http://localhost:7070/api/products')
+        fetch( host+'/api/products')
             .then(res => res.json())
             .then(json => dispatch({type: "json products", payload: json}))
             .catch(err => console.log(err));
@@ -140,6 +141,8 @@ function Main(props) {
     console.log(idP);
     console.log(process.env.PORT);
     console.log(process.env.JWT_KEY);
+    console.log(window.location.hostname);
+    console.log(window.location.origin);
     return (
         <div>
             <div className={"block_card"}>
