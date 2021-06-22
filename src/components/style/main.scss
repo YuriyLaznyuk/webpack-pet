@@ -31,9 +31,7 @@ text-decoration: none;
 .navPage{
   display: flex;
   justify-content: center;
-  position: fixed;
-  left: 10%;
-  bottom: 70px;
+  padding:10px ;
 }
 .navPage-li{
   list-style: none;
@@ -44,5 +42,13 @@ text-decoration: none;
   &:hover{
     background-color: #7abaff;
     transition: background-color 0.5s;
+  }
+}
+.addBasket button{
+  margin: 5px 0;
+  cursor: pointer;
+  &:hover{
+    background-color: rgba(194, 31, 57, 0.41);
+    transition: 0.5s;
   }
 }
