@@ -46,7 +46,6 @@ function AdminDashBoard(props) {
     }
 
     function showTable() {
-        console.log(process.env.DB_PASS);
 
         return (
             products.length > 0 ?
@@ -76,9 +75,15 @@ function AdminDashBoard(props) {
     }
 
     return (
+    <>
+            <h1 style={{margin:'10px 0 10px 0'}}>Admin Dashboard</h1>
+        <ul className='nav-dashboard'>
+            <li>PRODUCTS</li>
+            <li>USERS</li>
+            <li>ORDERS</li>
+        </ul>
         <div className='admin-dashboard'>
             {addProduct && <ModalDashboard/>}
-            <h1>Admin Dashboard</h1>
             <table className='table-dashboard'>
                 <thead>
                 <tr className='head'>
@@ -105,6 +110,7 @@ function AdminDashBoard(props) {
 
 
         </div>
+        </>
     );
 }
 

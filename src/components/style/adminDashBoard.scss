@@ -1,3 +1,20 @@
+.nav-dashboard{
+  display: flex;
+  justify-content: center;
+}
+.nav-dashboard li{
+  list-style: none;
+  padding: 5px;
+  cursor: pointer;
+  border: 1px solid;
+  background-color: rgba(163, 172, 182, 0.17);
+  margin: 0 5px;
+  &:hover{
+    color: #005cbf;
+    border: 1px solid #005cbf;
+    transition: color 0.5s;
+  }
+}
 .table-dashboard{
   width: 85%;
   margin: 10px auto;
