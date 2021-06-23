@@ -9,7 +9,8 @@ const defaultState = {
     editProduct: false,
     editIndex: null,
     addFlag: false,
-    editFlag: false
+    editFlag: false,
+    choice: 'products'
 };
 
 export function dashBoardReducer(state = defaultState, action) {
@@ -28,6 +29,8 @@ export function dashBoardReducer(state = defaultState, action) {
             return {...state, addFlag: !state.addFlag};
         case 'edit flag':
             return {...state, editFlag: !state.editFlag};
+        case 'nav choice':
+            return {...state, choice: action.payload};
         default:
             return state;
     }
