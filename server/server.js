@@ -203,7 +203,7 @@ app.get("/api/users", (req, res) => {
 
 //POST users registration
 app.post("/api/users", jsonParser, (req, res) => {
-    const {password, name, email} = req.body;
+    const {password, name, email, status} = req.body;
     let content = fs.readFileSync(filePath, 'utf8');
     const shop = JSON.parse(content);
     const users = shop.users;
@@ -214,7 +214,7 @@ app.post("/api/users", jsonParser, (req, res) => {
     }
     const hashPassword = bcrypt.hashSync(password, 8);
 
-    const newUser = {password: hashPassword, name: name, email: email,};
+    const newUser = {password: hashPassword, name: name, email: email, status: status};
     users.push(newUser);
     content = JSON.stringify(shop);
     fs.writeFileSync(filePath, content);
@@ -290,6 +290,21 @@ app.get('/api/users/auth', (req, res, next) => {
         }
     });
 });
+
+//--PUT USERS status--//
+app.put("/api/users", jsonParser, (req, res) => {
+    const email = req.body.email;
+    const status = req.body.status;
+    const content = fs.readFileSync(filePath, 'utf8');
+    const shop = JSON.parse(content);
+    const users = shop.users;
+    const user = users.filter(user => user.email === email);
+    user[0].status = status;
+    fs.writeFileSync(filePath, JSON.stringify(shop));
+    res.send(JSON.stringify(user[0]));
+
+});
+
 //---BASKET---//
 
 // GET all basket json

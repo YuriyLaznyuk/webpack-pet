@@ -3,7 +3,20 @@
     {
       "password": "$2a$08$J1Cf99Q9JPExxcWejrtHJuqiRo1y71pg1MscubfUVCXsr6DBRrZFK",
       "name": "ivan2021",
-      "email": "ivan2021@ukr.net"
+      "email": "ivan2021@ukr.net",
+      "status": "admin"
+    },
+    {
+      "password": "$2a$08$U9ZrzcTmB9r87u1d2Kk9R.8jjCi72FYDSvEonwqM37/5ZCXRrTF0u",
+      "name": "alan2021",
+      "email": "alan2021@ukr.net",
+      "status": "regular"
+    },
+    {
+      "password": "$2a$08$xLs4aFuwD41zKzDf8SBjAuwEk16GEzIHopqbgsrVGLajk3WRF6irO",
+      "name": "taras2021",
+      "email": "taras2021@ukr.net",
+      "status": "regular"
     }
   ],
   "products": [

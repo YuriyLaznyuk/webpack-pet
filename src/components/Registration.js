@@ -39,7 +39,8 @@ function Registration(props) {
             body: JSON.stringify({
                 name: name,
                 email: email,
-                password: password
+                password: password,
+                status:'regular'
             })
         }).then(res => res.json())
             .then(json => {
