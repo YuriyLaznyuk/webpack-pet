@@ -317,8 +317,11 @@ app.get("/api/basket", (req, res) => {
 // POST -- add order in basket
 
 app.post("/api/basket", jsonParser, (req, res) => {
-    const {idUser, idOrder, orderDate, products} = req.body;
-    const newOrder = {idUser: idUser, idOrder: idOrder, orderDate: orderDate, products: products};
+    const {idUser, idOrder, orderDate, products, status} = req.body;
+    const newOrder = {
+        idUser: idUser, idOrder: idOrder,
+        orderDate: orderDate, products: products, status: status
+    };
     let content = fs.readFileSync(filePath, 'utf8');
     const shop = JSON.parse(content);
     const basket = shop.basket;
@@ -328,6 +331,20 @@ app.post("/api/basket", jsonParser, (req, res) => {
     res.send({message: 'order adding in basket'});
 
 });
+
+//--PUT ORDER status--//
+app.put("/api/basket", jsonParser, (req, res) => {
+    const {idUser, status} = req.body;
+    const content = fs.readFileSync(filePath, 'utf8');
+    const shop = JSON.parse(content);
+    const basket = shop.basket;
+    const order = basket.filter(order => order.idUser === idUser);
+    order[0].status = status;
+    fs.writeFileSync(filePath, JSON.stringify(shop));
+    res.send(JSON.stringify(order[0]));
+
+});
+
 app.listen(PORT, () => {
     console.log(`server port ${PORT}`);
     console.log(filePath);
