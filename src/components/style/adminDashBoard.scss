@@ -61,12 +61,11 @@
   margin: 2px 5px;
   padding: 2px;
   cursor: pointer;
-  color: crimson;
   font-weight: 700;
   border: 3px solid black;
 
   &:hover{
-    background-color: rgba(194, 31, 57, 0.4);
+    background-color: rgba(80, 83, 77, 0.04);
     transition: background-color 0.5s;
   }
 
