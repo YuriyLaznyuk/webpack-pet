@@ -1,10 +1,10 @@
 import React from 'react';
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 
 function Product(props) {
-    const { products } = useSelector(state => state.shop);
+    const {products} = useSelector(state => state.shop);
     const id = props.idProduct;
-    const product = products.filter(item => item.productId === id)
+    const product = products.filter(item => item.productId === id);
     console.log(id);
     console.log(product);
     return (
