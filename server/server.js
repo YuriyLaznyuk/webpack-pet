@@ -4,6 +4,7 @@ const jsonParser = express.json();
 const path = require('path');
 const fs = require('fs');
 const rootDir = path.join(path.resolve(), 'dist');
+// const rootDir = __dirname + '/../dist';
 const rootFiles = path.join(path.resolve(), 'server');
 const filePath = path.join(rootFiles, '/files/shop.json');
 const bcrypt = require('bcryptjs');
